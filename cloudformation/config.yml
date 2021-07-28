@@ -7,6 +7,7 @@ Resources:
   rConfigRole:
     Type: AWS::IAM::Role
     DependsOn: rConfigBucket
+    #checkov:skip=CKV_AWS_111: "Ensure IAM policies does not allow write access without constraints"
     Properties:
       AssumeRolePolicyDocument:
         Version: '2012-10-17'
@@ -75,6 +76,8 @@ Resources:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
     UpdateReplacePolicy: Retain
+    #checkov:skip=CKV_AWS_18: "Ensure the S3 bucket has access logging enabled"
+    #checkov:skip=CKV_AWS_21: "Ensure the S3 bucket has versioning enabled"
     Properties:
       BucketName: !Sub "awsconfig-${AWS::Region}-${AWS::AccountId}"
       BucketEncryption:

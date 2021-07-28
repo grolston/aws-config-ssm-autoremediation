@@ -21,15 +21,15 @@ jobs:
         cloudformation_directory: "./cloudformation/"
         scanner: "cfn-nag"
 
-  ## cfn-lint scan
-  validate-cfn-lint:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: grolston/cfn-security@v1
-      with:
-        cloudformation_directory: './cloudformation/' ## change to your template directory
-        scanner: "cfn-lint"
+  # ## cfn-lint scan
+  # validate-cfn-lint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: grolston/cfn-security@v1
+  #     with:
+  #       cloudformation_directory: './cloudformation/' ## change to your template directory
+  #       scanner: "cfn-lint"
 
   ## checkov security scan
   validate_checkov:
