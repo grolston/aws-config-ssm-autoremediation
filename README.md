@@ -8,7 +8,7 @@ The project is closely based on the AWS Blog Post *[How to auto-remediate intern
 
 1. Custom AWS Config rule backed by lambda
 2. SSM Automation Document leveraging aws:executeScript with python
-3. AWS Config Automated Remedation configuration (ties AWS Config compliance to automated response from SSM Automation document)
+3. AWS Config Automated Remediation configuration (ties AWS Config compliance to automated response from SSM Automation document)
 
 For more information review the blog post [How to auto-remediate internet accessible ports with AWS Config and AWS System Manager](https://aws.amazon.com/blogs/security/how-to-auto-remediate-internet-accessible-ports-with-aws-config-and-aws-system-manager/)
 
@@ -28,6 +28,15 @@ The following prerequisites will need to be met to launch solution in your accou
 2. Click this button to launch stack.
 3. Fill out parameters
 
+
 > **Note:** If you want to open the link as a new tab use `ctrl+click` when clicking the *launch Stack* button below, or do the two-finger click and select `open new tab`
 
-[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?templateURL=https://rolston-cloud-library.s3.amazonaws.com/grolston-aws/aws-config-ssm-autoremediation/main.yml)
+### AWS CONFIG (PREREQ)
+
+If you do not have AWS Config setup in your region and simply want to test out the proof of concept in the project, then deploy the minimalist AWS Config solution here: [![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?templateURL=https://rolston-cloud-library.s3.amazonaws.com/grolston-aws/aws-config-ssm-autoremediation/config.yml)
+
+It will deploy AWS Config setup to only monitor changes to the EC2 Resource Type reducing costs for testing.
+
+### AWS CONFIG CUSTOM MANAGED RULE SOLUTION
+
+Deploy the Custom Managed Rule solution for the project: [![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?templateURL=https://rolston-cloud-library.s3.amazonaws.com/grolston-aws/aws-config-ssm-autoremediation/main.yml)
