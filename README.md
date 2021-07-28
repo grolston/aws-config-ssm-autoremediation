@@ -41,4 +41,6 @@ The stack will deploy a simplified version of Config setup to only monitor chang
 
 ### AWS CONFIG CUSTOM MANAGED RULE SOLUTION
 
-Deploy the Custom Managed Rule solution for the project: [![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?templateURL=https://rolston-cloud-library.s3.amazonaws.com/grolston-aws/aws-config-ssm-autoremediation/main.yml)
+Deploy the Config Custom Managed Rule solution for the project:
+
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?templateURL=https://rolston-cloud-library.s3.amazonaws.com/grolston-aws/aws-config-ssm-autoremediation/main.yml)
