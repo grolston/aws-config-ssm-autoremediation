@@ -31,11 +31,13 @@ The following prerequisites will need to be met to launch solution in your accou
 
 > **Note:** If you want to open the link as a new tab use `ctrl+click` when clicking the *launch Stack* button below, or do the two-finger click and select `open new tab`
 
-### AWS CONFIG (PREREQ)
+### AWS CONFIG Recorder (Prereq)
 
-If you do not have AWS Config setup in your region and simply want to test out the proof of concept in the project, then deploy the minimalist AWS Config solution here: [![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?templateURL=https://rolston-cloud-library.s3.amazonaws.com/grolston-aws/aws-config-ssm-autoremediation/config.yml)
+If you do not have AWS Config setup in your region, then deploy the minimalist AWS Config solution here:
 
-It will deploy AWS Config setup to only monitor changes to the EC2 Resource Type reducing costs for testing.
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home#/stacks/new?templateURL=https://rolston-cloud-library.s3.amazonaws.com/grolston-aws/aws-config-ssm-autoremediation/config.yml)
+
+The stack will deploy a simplified version of Config setup to only monitor changes to the EC2 resource type thus reducing costs for testing.
 
 ### AWS CONFIG CUSTOM MANAGED RULE SOLUTION
 
