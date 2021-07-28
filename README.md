@@ -1,6 +1,18 @@
 # Proof of Concept - AWS Config Custom Rule with Auto Remediation
 
-Automatically Remediate EC2 Instance Ports Accessible to the Internet with AWS Config and AWS System Manager.
+Automatically Remediate EC2 instance ports accessible to the internet (0.0.0.0/0) with AWS Config and AWS System Manager.
+
+## Overview
+
+The project is closely based on the AWS Blog Post *[How to auto-remediate internet accessible ports with AWS Config and AWS System Manager](https://aws.amazon.com/blogs/security/how-to-auto-remediate-internet-accessible-ports-with-aws-config-and-aws-system-manager/)* by Amal AlQhtani. The project simplifies the deployment by giving it a one-click deployment solution. The deployed solution creates:
+
+1. Custom AWS Config rule backed by lambda
+2. SSM Automation Document leveraging aws:executeScript with python
+3. AWS Config Automated Remedation configuration (ties AWS Config compliance to automated response from SSM Automation document)
+
+For more information review the blog post [How to auto-remediate internet accessible ports with AWS Config and AWS System Manager](https://aws.amazon.com/blogs/security/how-to-auto-remediate-internet-accessible-ports-with-aws-config-and-aws-system-manager/)
+
+> Note: At this time there is no deviation from the implementation created by Amal AlQhtani. Current work will be in factoring privileges and applying security best practices to the cloudformation.
 
 ## Prerequisites
 
