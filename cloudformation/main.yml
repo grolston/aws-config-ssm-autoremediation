@@ -262,13 +262,6 @@ Resources:
   #     Roles:
   #     - !Ref rConfigRulesLambdaRole
 
-  # rConfigRulesLambdaProfile:
-  #   Type: AWS::IAM::InstanceProfile
-  #   Properties:
-  #     Path: /
-  #     Roles:
-  #     - !Ref rConfigRulesLambdaRole
-
   rConfigPermissionToCallLambdaCompliance:
     Type: AWS::Lambda::Permission
     Properties:
