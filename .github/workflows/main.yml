@@ -1,0 +1,59 @@
+name: 'main'
+
+on: [push]
+
+env:
+  AWS_DEFAULT_REGION: us-west-2
+  AWS_DEFAULT_OUTPUT: json
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_S3_BUCKET: ${{ secrets.S3_BUCKET }}
+
+jobs:
+
+  validate_cfn-nag:
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+    - uses: actions/checkout@v2
+    - uses: grolston/cfn-security@v1
+      with:
+        cloudformation_directory: "./cloudformation/"
+        scanner: "cfn-nag"
+
+  ## cfn-lint scan
+  validate-cfn-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: grolston/cfn-security@v1
+      with:
+        cloudformation_directory: './cloudformation/' ## change to your template directory
+        scanner: "cfn-lint"
+
+  ## checkov security scan
+  validate_checkov:
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+    - uses: actions/checkout@v2
+    - uses: grolston/cfn-security@v1
+      with:
+        cloudformation_directory: "./cloudformation/"
+        scanner: "checkov"
+
+  deliver:
+    name: Deliver
+    if: github.ref == 'refs/heads/master'
+    #needs: [ validate_checkov, validate_cfn-nag, validate-cfn-lint]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --delete
+      env:
+        AWS_REGION: 'us-west-2'
+        SOURCE_DIR: 'cloudformation'
+        DEST_DIR: 'grolston-aws/aws-config-ssm-autoremediation'
