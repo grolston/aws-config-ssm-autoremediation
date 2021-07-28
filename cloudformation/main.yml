@@ -280,7 +280,7 @@ Resources:
     Type: AWS::Lambda::Function
     DependsOn: rConfigRulesLambdaRole
     Properties:
-      Handler: index.handler
+      Handler: index.lambda_handler
       Runtime: python3.7
       Timeout: 30
       Role: !GetAtt rConfigRulesLambdaRole.Arn
