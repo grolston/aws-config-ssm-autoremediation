@@ -31,7 +31,7 @@ The following prerequisites will need to be met to launch solution in your accou
 
 > **Note:** If you want to open the link as a new tab use `ctrl+click` when clicking the *launch Stack* button below, or do the two-finger click and select `open new tab`
 
-### AWS CONFIG Recorder (Prereq)
+### AWS CONFIG RECORDER (Prereq)
 
 If you do not have AWS Config setup in your region, then deploy the minimalist AWS Config solution here:
 
