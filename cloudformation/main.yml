@@ -258,21 +258,9 @@ Resources:
               - sts:AssumeRole
       Path: /
       ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/AdministratorAccess
-
-  # ## TODO: Reduce permissions from above managed policy attachment
-  # rConfigRulesLambdaPolicy:
-  #   Type: AWS::IAM::Policy
-  #   Properties:
-  #     PolicyName: configrules
-  #     PolicyDocument:
-  #       Version: 2012-10-17
-  #       Statement:
-  #       - Effect: Allow
-  #         Action: '*'
-  #         Resource: '*'
-  #     Roles:
-  #     - !Ref rConfigRulesLambdaRole
+        - arn:aws:iam::aws:policy/ReadOnlyAccess
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+        - arn:aws:iam::aws:policy/service-role/AWSConfigRulesExecutionRole
 
   rConfigPermissionToCallLambdaCompliance:
     Type: AWS::Lambda::Permission
