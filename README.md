@@ -1,4 +1,4 @@
-# Proof of Concept - AWS Config Custom Rule with Auto Remediation
+# AWS Config Custom Rule with Auto Remediation
 
 Automatically Remediate EC2 instance ports accessible to the internet (0.0.0.0/0) with AWS Config and AWS System Manager.
 
